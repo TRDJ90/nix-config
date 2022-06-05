@@ -18,6 +18,24 @@
     allowBroken = true;
   };
 
+  homebrew = {
+    enable = true;
+    brews = ["azure-cli"];
+    casks = ["raycast" "karabiner-elements"];
+    taps = [];
+  };
+  
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
+
+  fonts.fontDir.enable = true;
+  fonts.fonts = with pkgs; [
+	recursive
+	(nerdfonts.override { 
+		fonts = [
+			"Iosevka"
+			"JetBrainsMono"
+		]; 
+	})
+  ];
 }
