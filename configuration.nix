@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   users.users.thubie = {
+    name = "thubie";
     home = "/Users/thubie";
   };
 
@@ -11,6 +12,11 @@
   environment.systemPackages = with pkgs; [
     alacritty
   ];
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowBroken = true;
+  };
 
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
