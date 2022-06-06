@@ -1,0 +1,24 @@
+# global settings
+yabai -m config window_shadow on
+yabai -m config window_border off
+
+# bsp layout
+yabai -m config layout bsp
+
+# new window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# Set all padding and gaps to 10pt
+yabai -m config top_padding 8
+yabai -m config bottom_padding 8
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 10
+
+# apps to not manage(ignore)
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Telegram$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Mail$" manage=off
+yabai -m rule --add app="^Microsoft Teams$" manage=off
+yabai -m rule --add app="^zoom.us$" manage=off

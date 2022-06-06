@@ -9,14 +9,22 @@
     ripgrep
     
     # development tooling
+    tree-sitter
+
+    #C-sharp
     dotnet-sdk
-    omnisharp-roslyn
+    
+    #Rust
     rustc
     cargo
     rustfmt
-    rust-analyzer
     clippy
+    
+    #LSP servers
+    sumneko-lua-language-server
+    rust-analyzer
     rnix-lsp
+    omnisharp-roslyn
   ];
 
   # TODO: Find out how to break this up in seperate files and import
@@ -147,6 +155,7 @@
   };
 
   home.sessionVariables = {
+    RUST_BACKTRACE = 1;
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
   };
 }

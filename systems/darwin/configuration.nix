@@ -115,7 +115,7 @@
 
   homebrew = {
     enable = true;
-    brews = ["azure-cli" "yabai"];
+    brews = ["azure-cli" "yabai" "skhd"];
     casks = ["raycast" "karabiner-elements" "hammerspoon"];
     taps = [];
   };
