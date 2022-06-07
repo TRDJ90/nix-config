@@ -7,9 +7,19 @@
   home.packages = with pkgs; [
     exa
     ripgrep
+    tmux
+    bat
+    sqlite
     
     # development tooling
     tree-sitter
+
+    #Web
+    nodejs
+
+    # Containers
+    dapr-cli
+    docker
 
     #C-sharp
     dotnet-sdk
@@ -153,7 +163,10 @@
   programs.home-manager = {
     enable = true;
   };
-
+  
+  home.file.".hammerspoon/init.lua".source = ./dotfiles/hammerspoon/init.lua;
+  home.file.".config/yabai/yabairc".source = ./dotfiles/yabai/yabairc;
+  
   home.sessionVariables = {
     RUST_BACKTRACE = 1;
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
